@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,16 +7,13 @@ public class Main {
             "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
         };
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Digite o número do mês:");
-        int numeroDoMes = scanner.nextInt();
+        String input = JOptionPane.showInputDialog("Digite o número do mês:");
+        int numeroDoMes = Integer.parseInt(input);
 
         if (numeroDoMes >= 1 && numeroDoMes <= 12) {
-            System.out.println("O mês correspondente é: " + meses[numeroDoMes - 1]);
+            JOptionPane.showMessageDialog(null, "O mês correspondente é: " + meses[numeroDoMes - 1]);
         } else {
-            System.out.println("Número inválido. Por favor, insira um número entre 1 e 12.");
+            JOptionPane.showMessageDialog(null, "Número inválido. Por favor, insira um número entre 1 e 12.");
         }
-
-        scanner.close();
     }
 }
